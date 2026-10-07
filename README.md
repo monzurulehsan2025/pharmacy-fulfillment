@@ -35,6 +35,28 @@ npx serve . -p 3000
 
 ---
 
+## 🧪 Automated Test Suite (1 Test Per Endpoint)
+
+The repository includes an automated test suite covering each of the 5 RESTful API endpoints with full assertion coverage using the native Node.js test runner (`node:test` and `node:assert`).
+
+### Running Tests via Terminal CLI:
+```bash
+npm test
+```
+
+### Test Coverage Summary:
+| # | Test Suite | Target Endpoint | Coverage / Assertions |
+|---|---|---|---|
+| **1** | [`tests/fulfillmentBatches.test.js`](file:///Users/monzurulehsan/lab_v2/iA2/tests/fulfillmentBatches.test.js) | `GET`, `POST /api/v1/fulfillment/batches` | Batch queue retrieval, filtering, priority validation, SHA-256 checksum generation. |
+| **2** | [`tests/roboticsCells.test.js`](file:///Users/monzurulehsan/lab_v2/iA2/tests/roboticsCells.test.js) | `GET`, `PUT /api/v1/robotics/dispensing-cells` | Canister fill telemetry, RFID authentication, singulation accuracy SLA (>=99%), laser calibration mode. |
+| **3** | [`tests/opticalInspection.test.js`](file:///Users/monzurulehsan/lab_v2/iA2/tests/opticalInspection.test.js) | `GET`, `POST /api/v1/verification/inspections` | 120 FPS vision metrics, imprint OCR confidence, anomaly score, pharmacist sign-off, gate routing. |
+| **4** | [`tests/fleetNodes.test.js`](file:///Users/monzurulehsan/lab_v2/iA2/tests/fleetNodes.test.js) | `GET`, `POST /api/v1/telemetry/nodes` | Customer hospital nodes, backward compatibility contracts, staged canary rollout job execution. |
+| **5** | [`tests/observabilityMetrics.test.js`](file:///Users/monzurulehsan/lab_v2/iA2/tests/observabilityMetrics.test.js) | `GET /api/v1/observability/metrics` | Daily dispensed units, accuracy SLA rate, P99 dispense latency, singulation error PPM, hourly throughput. |
+
+*In addition, the web interface includes an interactive in-browser test runner located under the **REST API Inspector** tab.*
+
+---
+
 ## 📐 Key Functional Modules
 
 1. **🚀 Fulfillment Batches**: Manage high-velocity prescription dispensing queues, canister singulation pipelines, batch priorities (`STAT`, `URGENT`, `ROUTINE`), and view prescription manifests.
