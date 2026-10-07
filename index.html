@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PharmPulse OpsHub | Enterprise Pharmacy Automation & High-Volume Dispensing Orchestrator</title>
+  <meta name="description" content="Centralized operations dashboard and telemetry hub for automated high-volume pharmacy robotics, canister singulation, optical pill verification, and customer-deployed dispensary fleets." />
+  <meta name="keywords" content="pharmacy automation, robotic dispensing, prescription fulfillment, optical verification, IoT telemetry, dispensary fleet" />
+  <meta name="theme-color" content="#090d16" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="brand-section">
+        <div class="brand-logo">℞</div>
+        <div>
+          <h1 class="brand-title">PharmPulse OpsHub</h1>
+          <div class="brand-subtitle">Automated Pharmacy Fulfillment & Robotics Orchestrator</div>
+        </div>
+      </div>
+
+      <div class="header-status">
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          <span>REST API / TELEMETRY ONLINE</span>
+        </div>
+        <div class="facility-badge">
+          <span>🏛️ FAC-CENTRAL-01</span>
+        </div>
+        <div class="header-controls">
+          <button class="btn btn-icon" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sub-Navigation Navigation Tabs -->
+    <nav class="nav-tabs-container" aria-label="Operations Modules">
+      <button class="nav-tab active" data-tab="batches">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        <span>Fulfillment Batches</span>
+        <span class="tab-counter">3</span>
+      </button>
+
+      <button class="nav-tab" data-tab="robotics">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path></svg>
+        <span>Robotics Cells</span>
+        <span class="tab-counter">4</span>
+      </button>
+
+      <button class="nav-tab" data-tab="inspection">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+        <span>Optical Verification</span>
+        <span class="tab-counter" style="background: rgba(245, 158, 11, 0.3); color: #fbbf24;">2 Review</span>
+      </button>
+
+      <button class="nav-tab" data-tab="fleet">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span>Fleet Nodes</span>
+        <span class="tab-counter">4</span>
+      </button>
+
+      <button class="nav-tab" data-tab="observability">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+        <span>Observability & SLA</span>
+      </button>
+
+      <button class="nav-tab" data-tab="inspector" style="margin-left: auto; border-left: 1px solid var(--border-subtle); padding-left: 1.25rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        <span style="color: var(--accent-cyan); font-weight: 600;">REST API Inspector</span>
+      </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- 1. Fulfillment Batches Panel -->
+      <section id="panel-batches" class="tab-panel active" aria-labelledby="tab-batches">
+        <!-- Injected by BatchManagementView -->
+      </section>
+
+      <!-- 2. Robotics Cells Panel -->
+      <section id="panel-robotics" class="tab-panel" aria-labelledby="tab-robotics">
+        <!-- Injected by RoboticsTelemetryView -->
+      </section>
+
+      <!-- 3. Optical Pill Inspection Panel -->
+      <section id="panel-inspection" class="tab-panel" aria-labelledby="tab-inspection">
+        <!-- Injected by OpticalInspectionView -->
+      </section>
+
+      <!-- 4. Customer-Deployed Fleet Nodes Panel -->
+      <section id="panel-fleet" class="tab-panel" aria-labelledby="tab-fleet">
+        <!-- Injected by FleetDeploymentView -->
+      </section>
+
+      <!-- 5. Observability & Telemetry Panel -->
+      <section id="panel-observability" class="tab-panel" aria-labelledby="tab-observability">
+        <!-- Injected by ObservabilityDashboardView -->
+      </section>
+
+      <!-- 6. REST API Live Network Inspector Panel -->
+      <section id="panel-inspector" class="tab-panel" aria-labelledby="tab-inspector">
+        <!-- Injected by ApiInspectorView -->
+      </section>
+    </main>
+
+    <!-- Global Modal Backdrop & Container -->
+    <div id="global-modal-backdrop" class="modal-backdrop">
+      <div id="global-modal-container" class="modal-content">
+        <!-- Modal content loaded dynamically -->
+      </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+  </div>
+
+  <!-- Main JavaScript App Entrypoint -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

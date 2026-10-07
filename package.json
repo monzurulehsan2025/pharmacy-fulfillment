@@ -1,0 +1,21 @@
+{
+  "name": "pharmpulse-automation-ops",
+  "version": "1.0.0",
+  "description": "Enterprise Pharmacy Fulfillment & Robotics Dispensing Operations Dashboard",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve . -p 3000",
+    "dev": "npx -y serve . -p 3000",
+    "preview": "npx -y serve . -p 3000"
+  },
+  "keywords": [
+    "pharmacy-automation",
+    "robotics-dispensing",
+    "fulfillment-operations",
+    "computer-vision-verification",
+    "telemetry",
+    "rest-api"
+  ],
+  "author": "Engineering Team",
+  "license": "MIT"
+}
